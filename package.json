@@ -1,0 +1,36 @@
+{
+  "name": "guestbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple decentralized Guestbook built on Midnight.",
+  "workspaces": [
+    "contract",
+    "shared",
+    "ui"
+  ],
+  "scripts": {
+    "compact": "npm run compact --workspace=contract",
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspace=ui",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "deploy:preview": "npm run deploy:preview --workspace=contract",
+    "deploy:preprod": "npm run deploy:preprod --workspace=contract",
+    "deploy:mainnet": "npm run deploy:mainnet --workspace=contract",
+    "proof:up": "docker run -d --name midnight-proof-server -p 6300:6300 midnightnetwork/proof-server -- 'midnight-proof-server --network testnet'",
+    "proof:down": "docker rm -f midnight-proof-server"
+  },
+  "keywords": [
+    "midnight",
+    "guestbook",
+    "blockchain",
+    "compact",
+    "typescript",
+    "react"
+  ],
+  "author": "Sujeet",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
